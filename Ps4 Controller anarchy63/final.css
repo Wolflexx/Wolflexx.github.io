@@ -16,7 +16,7 @@
 }
 
 .ds4.white .touchpad.pressed {
-    background-image: url(touchpadmod.png);
+    background-image: url(touchpad.png);
 }
 
 .ds4.white .back, .ds4 .start {
