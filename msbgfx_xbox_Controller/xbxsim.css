@@ -79,8 +79,8 @@
 .xbox .quadrant {
     position: absolute;
     background: url(quadrant.png);
-    height: 45px;
-    width: 45px;
+    height: 0px;
+    width: 0px;
     top: 258px;
     left: 354px;
     z-index: 0;
