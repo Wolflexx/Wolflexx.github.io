@@ -76,7 +76,7 @@
 }
 
 
-/* .xbox .quadrant {
+.xbox .quadrant {
     position: absolute;
     background: url(quadrant.png);
     height: 45px;
@@ -84,7 +84,7 @@
     top: 265px;
     left: 354px;
     z-index: 0;
-} */
+}
 
 .xbox .p0 {
     -webkit-transform: rotate(0deg);
