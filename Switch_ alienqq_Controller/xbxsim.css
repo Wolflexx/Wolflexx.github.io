@@ -49,7 +49,7 @@
 .xbox .bumper {
     width: 180px;
     height: 60px;
-    background: url(bumpermod.png));
+    background: url(bumpermod.png);
     opacity: 0;
 }
 
