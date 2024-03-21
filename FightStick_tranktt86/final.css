@@ -1,0 +1,231 @@
+/*BEGIN Fight Stick Controller Styling*/
+.controller.fight-stick {
+    background: url(Basemod.gif) center no-repeat;
+    height: 534px;
+    width: 1122px;
+}
+
+.fight-stick.disconnected {
+    background: url(Disconnected.png) no-repeat;
+    height: 534px;
+    width: 1122px;
+}
+
+.fight-stick.disconnected div {
+    display: none;
+}
+
+.fight-stick .triggers {
+    width: 136px;
+    height: 136px;
+    position: absolute;
+}
+
+.fight-stick .trigger-button {
+    opacity: 1;
+    width: 123px;
+    height: 123px;
+    background: #00000000;
+
+    opacity: 1;
+    display: block;
+}
+
+.fight-stick .trigger-button.pressed {
+
+    background: url(Triggermod.png) center no-repeat;
+    -webkit-filter: invert(0);
+    width: 200px;
+    height: 200px;
+    position: absolute;
+}
+
+.fight-stick .trigger-button.left {
+    display: none;
+}
+
+.fight-stick .trigger-button.right {
+    opacity: 1;
+     right: 142px;
+     bottom: 15px;
+}
+
+.fight-stick .bumpers {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+}
+
+.fight-stick .bumper {
+    width: 200px;
+    height: 200px;
+    background: #00000000;
+    border-radius: 100%;
+    opacity: 1;
+    display: block;
+}
+
+.fight-stick .bumper.pressed {
+    background: url(Bumpermod.png) center no-repeat;
+    -webkit-filter: invert(0);
+    position: absolute;
+}
+
+.fight-stick .bumper.left {
+    display: none;
+}
+
+.fight-stick .bumper.right {
+    opacity: 1;
+    right: 145px;
+    bottom: 21px;
+}
+
+.fight-stick .quadrant {
+    display: none;
+}
+
+.fight-stick .p0:after {
+    display: none;
+}
+
+.fight-stick .p1:after {
+    display: none;
+}
+
+.fight-stick .p2:after {
+    display: none;
+}
+
+.fight-stick .p3:after {
+    display: none;
+}
+
+.fight-stick .arrows {
+    position: absolute;
+    width: 70px;
+    height: 217px;
+    top: 53px;
+    left: 49px;
+}
+
+.fight-stick .back, .fight-stick .start {
+    display: none;
+}
+
+.fight-stick .back {
+    display: none;
+}
+
+.fight-stick .start {
+    display: none;
+}
+
+.fight-stick .back.pressed, .fight-stick .start.pressed {
+    display: none;
+
+}
+.fight-stick .abxy {
+    position: absolute;
+    width: 310px;
+    height: 370px;
+    bottom: 103px;
+    left: 472px;
+}
+
+.fight-stick .button {
+    width: 123px;
+    height: 123px;
+    background: #33333300;
+    border-radius: 100%;
+    opacity: 1;
+    display: block;
+    position: absolute;
+}
+
+.fight-stick .button.pressed {
+    background: url(Buttonsmod.png) center no-repeat;
+    -webkit-filter: invert(0);
+}
+
+.fight-stick .a {
+   
+    bottom: 0px;
+    left: 0px;
+}
+
+.fight-stick .b {
+    bottom: 35px;
+    right: 20px;
+}
+
+.fight-stick .x {
+    top: 60px;
+    left: 0px
+}
+
+.fight-stick .y {
+    right: 20px;
+    top: 25px;
+}
+
+
+.fight-stick .fstick {
+    position: absolute;
+    width: 221px;
+    height: 221px;
+    top: 199px;
+    left: 192px;
+    background: url(stickmod.png)
+}
+
+.fight-stick .fstick.up {
+    background-position-x: -1762px;
+    top: 110px;
+    left: 120px;
+}
+
+.fight-stick .fstick.down {
+    background-position-x: -882px;
+    top: 227px;
+    left: 120px;
+}
+
+.fight-stick .fstick.left {
+    background-position-x: -1322px;
+    top: 171px;
+    left: 62px;
+}
+
+.fight-stick .fstick.right {
+    background-position-x: -442px;
+    top: 171px;
+    left: 182px;
+}
+
+.fight-stick .fstick.up.right {
+    background-position-x: -222px;
+    top: 128px;
+    left: 165px;
+}
+
+.fight-stick .fstick.up.left {
+    background-position-x: -1542px;
+    top: 125px;
+    left: 75px;
+}
+
+.fight-stick .fstick.down.right {
+    background-position-x: -662px;
+    top: 217px;
+    left: 162px;
+}
+
+.fight-stick .fstick.down.left {
+    background-position-x: -1102px;
+    top: 217px;
+    left: 78px;
+}
+
+
+/*END Fight Stick Controller Styling*/
