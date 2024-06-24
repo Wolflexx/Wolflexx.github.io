@@ -184,6 +184,18 @@ background-position: 0 -70px;
     height: 286px;
 }
 
+.ds4 .a {
+    background-position: 0 0;
+    bottom: 0px;
+    left: 58px;
+}
+
+.ds4 .b {
+    background-position: -57px 0;
+    top: 57px;
+    right: -3px;
+}
+
 .ds4 .x {
     background-position: -113px 0;
     top: 57px;
