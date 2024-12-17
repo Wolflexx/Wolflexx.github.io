@@ -1,0 +1,198 @@
+/*Start N64 Styling*/
+.controller.n64 {
+    background: url(N64base.png);
+    height: 851px;
+    width: 810px;
+}
+
+.controller.n64.disconnected {
+    background: url(Disconnected.gif);
+}
+
+/* .controller.n64.disconnected * {
+    display: none;
+} */
+
+.n64 .bumpers{
+    position: absolute;
+    height: 79.9px;
+    width: 600.9px;
+    top: 85.3px;
+    left: 105px
+}
+
+.n64 .bumper{
+    background: url(buttons.png);
+    height: 68px;
+    width: 174px;
+    display: block;
+    position: absolute;
+}
+
+.n64 .bumper.right{
+    right: 0;
+    transform: rotateY(180deg);
+}
+
+.n64 .triggers{
+    position: absolute;
+    
+}
+
+.n64 .trigger.left{
+    width: 586px;
+    height: 76px;
+    background: url(Triggers.png);
+    display: block;
+    background-position-y: 0px;
+    left: -265px;
+    top: 31px;
+    position: absolute
+}
+
+
+.n64 .dpad{
+    width: 150px;
+    height: 150px;
+    /*     background: #FF00008F; */
+    position: absolute;
+    top: 384px;
+    left: 250px;
+}
+
+.n64 .dpad .face{
+    background: url(buttons.png);
+    height: 61.3px;
+    width: 38px;
+    background-position-y: -180px;
+    display: block;
+    position: absolute
+}
+
+.n64 .dpad .face.up{
+    left: 32px
+}
+
+
+.n64 .dpad .face.down{
+    transform: rotate(180deg);
+    left: 32px;
+    top: 65px
+}
+
+.n64 .dpad .face.left{
+    transform: rotate(-90deg);
+    top: 33px
+}
+
+.n64 .dpad .face.right{
+    transform: rotate(90deg);
+    top: 33px;
+    left: 64px;
+}
+
+/* We're using the node used for a controller's system button here */
+.n64 .meta{
+    background: url(buttons.png);
+    width: 68px;
+    height: 68px;
+    background-position-y: -318px;
+    background-position-x: -353px;
+    position: absolute;
+    left: 372px;
+    top: 201px
+}
+
+.n64 .abxy{
+    position: absolute;
+    top: 203px;
+    left: 545px
+}
+
+.n64 .abxy .button{
+    background: url(buttons.png);
+    width: 50px;
+    height: 50px;
+    background-position-y: -255.7px;
+    background-position-x: -179px;
+    display: block;
+    position: absolute;
+}
+
+.n64 .abxy .button.a{
+    left: 45px
+}
+
+.n64 .abxy .button.b{
+    /* left: 44px; */
+    top: 108px;
+    transform: rotate(180deg);
+}
+
+.n64 .abxy .button.x{
+    top: 54px;
+    left: -10px;
+    transform: rotate(-90deg)
+}
+
+.n64 .abxy .button.y{
+    left: 99px;
+    top: 55px;
+    transform: rotate(90deg);
+}
+
+.n64 .arrows{
+    position: absolute;
+    top: 335px;
+    left: 529px
+}
+
+.n64 .back, .n64 .start{
+    background: url(buttons.png);
+    width: 72px;
+    height: 72px;
+    background-position-y: -401px;
+    background-position-x: -354px;
+    top: -28px;
+    left: -91px;
+    display: block;
+    position: relative;
+}
+
+.n64 .start{
+    background-position-y: -485px;
+    top: -32px;
+    left: -23px
+}
+
+.n64 .sticks{
+    position: absolute;
+    top: 493px;
+    left: 369px;
+}
+
+.n64 .stick.left{
+    background: url(buttons.png);
+    width: 125px;
+    height: 125px;
+    top: -255px;
+    right: 252px;
+    display: block;
+    background-position-y: 128px;
+    position: relative;
+
+}
+
+.n64 .button,
+.n64 .face,
+.n64 .meta,
+.n64 .bumper,
+.n64 .trigger,
+.n64 .arrows *{
+    opacity: 0
+}
+
+.n64 .pressed{
+    opacity: 1
+}
+/*END N64 Styling*/
