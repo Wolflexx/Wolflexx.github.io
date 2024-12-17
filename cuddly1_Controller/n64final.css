@@ -42,7 +42,7 @@
 .n64 .trigger.left{
     width: 586px;
     height: 76px;
-    background: url(Triggers.png);
+    background: url(triggers.png);
     display: block;
     background-position-y: 0px;
     left: -265px;
@@ -161,8 +161,8 @@
 
 .n64 .start{
     background-position-y: -485px;
-    top: -32px;
-    left: -23px
+    top: -34px;
+    left: -21px
 }
 
 .n64 .sticks{
