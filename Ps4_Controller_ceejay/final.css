@@ -1,0 +1,49 @@
+/*BEGIN PS4 White Controller Styling*/
+.controller.ds4.white {
+    background-image: url(https://iili.io/f8VOjvR.gif);
+}
+
+.ds4.white.disconnected {
+    background: url(Disconnected.gif);
+}
+
+.ds4.white .trigger {
+    background-image: url(triggersmod.png);
+}
+
+.ds4.white .bumper {
+    background-image: url(bumpermod.png);
+}
+
+.ds4.white .touchpad.pressed {
+    background-image: url(touchpadmod.png);
+}
+
+.ds4.white .back, .ds4 .start {
+    background-image: url(startmod.png);
+}
+
+.ds4.white .button {
+    background-image: url(buttonmod.png);
+}
+
+.ds4.white .stick {
+    background-image: url(sticksmod.png);
+}
+
+.ds4.white .face {
+    background-image: url(dpadmod.png);
+}
+
+.ds4 .meta {
+    width: 42px;
+    height: 42px;
+    position: absolute;
+    left: 382px;
+    bottom: 216px;
+}
+
+.ds4 .meta.pressed {
+    background: url(meta.png) no-repeat center;
+}
+/*END PS4 White Controller Styling*/
