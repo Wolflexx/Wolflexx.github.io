@@ -35,4 +35,7 @@
     background-image: url(dpadmod.png);
 }
 
+.ds4 .meta.pressed {
+    background: url(meta.png) no-repeat center;
+}
 /*END PS4 White Controller Styling*/
