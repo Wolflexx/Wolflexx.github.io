@@ -48,16 +48,15 @@
 
 .ds4 .bumpers {
     position: absolute;
-    width: 672px;
-    height: 23px;
+    width: 673.1px;
+    height: 55px;
     left: 263px;
-    top: 132px;
+    top: 120px;
 }
 
 .ds4 .bumper.pressed {
-    opacity: 0.8;
+    opacity: 0.9;
 }
-
 .ds4 .bumper.left {
     /* -webkit-transform: rotateY(180deg); */
     /* transform: rotateY(180deg); */
