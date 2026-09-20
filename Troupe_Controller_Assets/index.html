@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xbox Local Overlay</title>
+    <link rel="stylesheet" href="styleXBX.css">
+</head>
+<body>
+
+    <div class="controller xbox disconnected" id="gamepad">
+        
+        <div class="triggers">
+            <div class="trigger left" id="l2-trigger"></div>
+            <div class="trigger right" id="r2-trigger"></div>
+        </div>
+        
+        <div class="bumpers">
+            <div class="bumper left" id="l1"></div>
+            <div class="bumper right" id="r1"></div>
+        </div>
+
+        <div class="quadrant p0"></div>
+        
+        <div class="arrows">
+            <div class="back" id="share"></div>
+            <div class="start" id="options"></div>
+        </div>
+
+        <div class="abxy">
+            <div class="button a" id="cross"></div> 
+            <div class="button b" id="circle"></div> 
+            <div class="button x" id="square"></div> 
+            <div class="button y" id="triangle"></div> 
+        </div>
+        
+        <div class="sticks">
+            <div class="stick left" id="l-stick"></div>
+            <div class="stick right" id="r-stick"></div>
+        </div>
+        
+        <div class="dpad">
+            <div class="face up" id="dpad-up"></div>
+            <div class="face down" id="dpad-down"></div>
+            <div class="face left" id="dpad-left"></div>
+            <div class="face right" id="dpad-right"></div>
+        </div>
+
+        <div class="meta" id="home"></div>
+    </div>
+
+    <script>
+        let gamepadIndex = null;
+        let animationFrameId = null;
+        
+        const buttonMap = {
+            0: 'cross', 1: 'circle', 2: 'square', 3: 'triangle',
+            4: 'l1', 5: 'r1',
+            8: 'share', 9: 'options',
+            10: 'l-stick', 11: 'r-stick',
+            12: 'dpad-up', 13: 'dpad-down', 14: 'dpad-left', 15: 'dpad-right',
+            16: 'home' // Mapped Button 16 to the Meta/Guide button
+        };
+
+        window.addEventListener("gamepadconnected", (e) => {
+            const deviceName = e.gamepad.id.toLowerCase();
+            console.log("Device connected:", deviceName, "at index", e.gamepad.index);
+
+            // IGNORE THE HYPERX QUADCAST
+            if (deviceName.includes("quadcast") || deviceName.includes("hyperx")) {
+                console.log("Ignored audio device masquerading as a controller.");
+                return; // Stop here, don't assign it as the gamepad
+            }
+
+            gamepadIndex = e.gamepad.index;
+            document.getElementById('gamepad').classList.remove('disconnected');
+            if (animationFrameId) cancelAnimationFrame(animationFrameId);
+            loop();
+        });
+
+        window.addEventListener("gamepaddisconnected", (e) => {
+            console.log("Device disconnected:", e.gamepad.id);
+            if (gamepadIndex === e.gamepad.index) {
+                gamepadIndex = null;
+                document.getElementById('gamepad').classList.add('disconnected');
+                if (animationFrameId) cancelAnimationFrame(animationFrameId);
+            }
+        });
+
+        function loop() {
+            if (gamepadIndex !== null) {
+                const gp = navigator.getGamepads()[gamepadIndex];
+                if (gp) {
+                    // Standard Button Update
+                    for (const [index, id] of Object.entries(buttonMap)) {
+                        const btn = gp.buttons[index];
+                        const el = document.getElementById(id);
+                        if (el && btn) {
+                            if (btn.pressed) el.classList.add('pressed');
+                            else el.classList.remove('pressed');
+                        }
+                    }
+
+                    // Triggers and Sticks
+                    if(gp.buttons[6]) document.getElementById('l2-trigger').style.opacity = gp.buttons[6].value;
+                    if(gp.buttons[7]) document.getElementById('r2-trigger').style.opacity = gp.buttons[7].value;
+
+                    updateStick('l-stick', gp.axes[0], gp.axes[1]);
+                    updateStick('r-stick', gp.axes[2], gp.axes[3]);
+                }
+            }
+            animationFrameId = requestAnimationFrame(loop);
+        }
+
+        function updateStick(elementId, x, y) {
+            const el = document.getElementById(elementId);
+            const deadzone = 0.1;
+            if (Math.abs(x) < deadzone) x = 0;
+            if (Math.abs(y) < deadzone) y = 0;
+            
+            const range = 22; 
+            el.style.transform = `translate(${x * range}px, ${y * range}px)`;
+        }
+
+        // NEW 3D WARP STICK LOGIC
+        function updateStick(elementId, x, y) {
+            const el = document.getElementById(elementId);
+            const deadzone = 0.1;
+            if (Math.abs(x) < deadzone) x = 0;
+            if (Math.abs(y) < deadzone) y = 0;
+            
+            const transRange = 22; // How far the stick slides (pixels)
+            const rotRange = 20;   // How far the stick tilts (degrees)
+            const depth = 200;     // 3D perspective depth (lower = more exaggerated warp)
+            
+            el.style.transform = `
+                perspective(${depth}px) 
+                translate(${x * transRange}px, ${y * transRange}px) 
+                rotateX(${-y * rotRange}deg) 
+                rotateY(${x * rotRange}deg)
+            `;
+        }
+    </script>
+</body>
+</html>
